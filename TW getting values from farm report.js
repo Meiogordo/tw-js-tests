@@ -21,9 +21,6 @@ if (spy == null){
 		output += spy.getElementsByClassName('nowrap')[i].children[0].title + ': ' + spy.getElementsByClassName('nowrap')[i].textContent + "\n"
 		out2 += parseInt(spy.getElementsByClassName('nowrap')[i].textContent);
 
-		//texto[i] = spy.getElementsByClassName('nowrap')[i].children[0].title + ': ' + spy.getElementsByClassName('nowrap')[i].textContent
-		//alert(spy.getElementsByClassName('nowrap')[i].children[0].title + ': ' + spy.getElementsByClassName('nowrap')[i].textContent);
-
 	}
 
 	
