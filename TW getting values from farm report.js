@@ -13,17 +13,11 @@ if (spy == null){
 	var out2 = 0;
 	for (i=0;i<spy.getElementsByClassName('nowrap').length;i++) {
 
-		/*
-		console.log(spy.getElementsByClassName('nowrap')[i].children[0].title + ': ');
-		console.log(spy.getElementsByClassName('nowrap')[i].textContent);
-		*/
-
 		output += spy.getElementsByClassName('nowrap')[i].children[0].title + ': ' + spy.getElementsByClassName('nowrap')[i].textContent + "\n"
 		out2 += parseInt(spy.getElementsByClassName('nowrap')[i].textContent);
 
 	}
 
-	
 	//output de recs individuais
 	//alert(output); 
 
