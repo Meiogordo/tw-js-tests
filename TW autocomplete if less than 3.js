@@ -16,3 +16,6 @@ function clicaNessaBeep(){
 }
 
 setInterval(clicaNessaBeep, 3000); //cuidado com este valor, é em ms, n pôr baixo demais
+
+//log na consola para saber que ativou
+console.log('Script runando');

@@ -22,6 +22,9 @@ if (spy == null){
 	//alert(output); 
 
 	//output da soma
-	alert("Total: " + out2 + "\nSerão precisos " + out2/80 + " cls.");
+	//alert("Total: " + out2 + "\nSerão precisos " + out2/80 + " cls.");
+	//Retired para novo "newline"
+		
+	UI.InfoMessage("Total: " + out2 + "</br>Serão precisos " + out2/80 + " cls.",4000);
 	
 }
