@@ -10,6 +10,9 @@ function clicaNessaBeep(){
 
 		document.getElementsByClassName('order_feature btn btn-btr btn-instant-free')[0].click();
 		//risky atm, I'll test with alerts - nah screw it
+		
+		//log na consola para saber que ativou
+		console.log('Script runando');
 
 	}
 
