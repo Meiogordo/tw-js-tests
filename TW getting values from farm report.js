@@ -35,7 +35,7 @@ if (spy == null){
 
 	//output da soma
 	//alert("Total: " + out2 + "\nSerão precisos " + out2/80 + " cls.");
-	//Retired para novo "newline"
+	//Retired para novo output com UI.InfoMessage
 		
 	UI.InfoMessage("Total: " + out2 + "</br>Serão precisos " + out2/80 + " cls.",4000);
 	
