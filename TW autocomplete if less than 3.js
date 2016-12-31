@@ -10,6 +10,8 @@ function clicaNessaBeep(){
 
 		document.getElementsByClassName('order_feature btn btn-btr btn-instant-free')[0].click();
 		//risky atm, I'll test with alerts - nah screw it
+		clicaNessaBeep();
+		//if found, recheck, cos there might be another one up that is also <3min - this way spam wall at beginning is almost instant
 
 	}
 
