@@ -1,14 +1,9 @@
 javascript:
 
-
-spy = document.getElementById('attack_spy_resources');
-
-
-if (spy == null){
-	alert('O script deve ser corrido num relatório');
-}
-	else {
-
+(function() {
+if (game_data.screen == "report"){
+	
+	spy = document.getElementById('attack_spy_resources');
 	var output = "";
 	var out2 = 0;
 	for (i=0;i<spy.getElementsByClassName('nowrap').length;i++) {
@@ -39,4 +34,4 @@ if (spy == null){
 		
 	UI.InfoMessage("Total: " + out2 + "</br>Serão precisos " + out2/80 + " cls.",4000);
 	
-}
+}})()
