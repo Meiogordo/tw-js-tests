@@ -1,3 +1,5 @@
+javascript:
+
 var takethis = prompt('Distância máxima para saquear?');
 localStorage["tribosmaxDistAS"] = !takethis ? 0 : takethis;
 
