@@ -4,7 +4,7 @@ javascript:
 if (game_data.screen == "report"){
 	
 	spy = document.getElementById('attack_spy_resources');
-	var output = "";
+	//var output = "";
 	var out2 = 0;
 	for (i=0;i<spy.getElementsByClassName('nowrap').length;i++) {
 
