@@ -11,27 +11,30 @@ if(maxDist == 0){
 	alert("Por favor definir distância com o outro botão ou usando o localStorage de valor tribosmaxDistAS");
 }
 
-$(".farm_icon_c").each(function(i, elem){
+$(".farm_icon_c").each(function(i, elem){	
 
+	setTimeout(function(){	
 
 	lightqtd = parseInt($("#light").text());
+	//final test, managed to stop extra cleeks - afaik break does nothing inside setTimeout so it will be scrapped
+	/*
 	if(lightqtd == 0){
 		return false; //breaks loop
 	}
+	*/
 
-	if( !$(this).hasClass("farm_icon_disabled") )
+	if( !$(elem).hasClass("farm_icon_disabled") && lightqtd > 0 )
 	{
-		untreateddist = $(this).parent().prev().prev().prev().text();
+		untreateddist = $(elem).parent().prev().prev().prev().text();
 		dist = parseFloat(untreateddist);
 
 		if(dist<=maxDist){
-			setTimeout(function(){$(elem).click();},index * delaybetween);
-			index++;	
+			$(elem).click();
 		}
 
-	} else {
-		return true; //skip to next iteration - like continue in for loop
 	}
 
+	},index * delaybetween);
+	index++;
 }
 );
