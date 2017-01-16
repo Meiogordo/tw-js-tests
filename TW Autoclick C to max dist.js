@@ -7,9 +7,9 @@ var maxDist = parseInt(localStorage["tribosmaxDistAS"]);
 var index = 1;
 var lightqtd = 0; //qtd of cls, use to detect end
 
-if(maxDist == 0){
+if(maxDist == 0 || !maxDist){
 	alert("Por favor definir distância com o outro botão ou usando o localStorage de valor tribosmaxDistAS");
-}
+} else {
 
 $(".farm_icon_c").each(function(i, elem){	
 
@@ -38,3 +38,5 @@ $(".farm_icon_c").each(function(i, elem){
 	index++;
 }
 );
+
+}
