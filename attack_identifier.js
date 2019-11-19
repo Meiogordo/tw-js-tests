@@ -1,7 +1,7 @@
 (() => {
 	//// Helper definitions
-	const troopTimes = [18, 22, 9, 10, 11, 30, 35];
-	const troopNames = ["Lanceiros, Vikings ou Arqueiros", "Espadachins", "Batedores", "Cavalaria Leve, Arqueiros a Cavalo ou Paladino", "Cavalaria Pesada", "Aríetes ou Catapultas", "Nobre"];
+	const troopTimes = [9, 10, 11, 18, 22, 30, 35];
+	const troopNames = ["Batedores", "Cavalaria Leve, Arqueiros a Cavalo ou Paladino", "Cavalaria Pesada", "Lanceiros, Vikings ou Arqueiros", "Espadachins", "Aríetes ou Catapultas", "Nobre"];
 
 	const getVillagesFullNames = () => [...document.querySelectorAll(".village_anchor.contexted")].map(node => node.textContent);
 
@@ -14,6 +14,35 @@
 	const timeFromDistanceAndUnitTime = (distance) => (unit_time_mins) => {
 		//minutes -> seconds to print in hh:mm:ss using Date object
 		return new Date(distance * unit_time_mins * 60 * 1000).toISOString().substr(11, 8);
+	}
+
+	const createTableFromTimeData = (times_by_troopname) => {
+		const table = document.createElement("table");
+		table.className = "vis";
+
+		const first_row = document.createElement("tr");
+		const unit_type_th = document.createElement("th");
+		unit_type_th.textContent = "Tipo de Unidade";
+		const time_th = document.createElement("th");
+		time_th.textContent = "Tempo (hh:mm:ss)"
+		first_row.appendChild(unit_type_th);
+		first_row.appendChild(time_th);
+		table.appendChild(first_row);
+
+		// TODO: Highlight the most likely one based on the current duration value
+		for (let unit_name in times_by_troopname) {
+			const row = document.createElement("tr");
+			const unit_type_name = document.createElement("td");
+			unit_type_name.textContent = unit_name;
+			const unit_time = document.createElement("td");
+			unit_time.textContent = times_by_troopname[unit_name];
+
+			row.appendChild(unit_type_name);
+			row.appendChild(unit_time);
+			table.appendChild(row);
+		}
+
+		return table;
 	}
 
 	//// Program start
@@ -36,6 +65,12 @@
 
 	console.log("distance", distance);
 	console.log("times", times);
+
+	const parentElement = document.querySelector("table.main td#content_value");
+	const distance_element = document.createElement("div");
+	distance_element.textContent = `Distância: ${distance}`;
+	parentElement.appendChild(distance_element);
+	parentElement.appendChild(createTableFromTimeData(times));
 })();
 
 //exemplo para analisar dps:
