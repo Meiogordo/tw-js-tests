@@ -1,4 +1,7 @@
-// For usage in (at least) a report page, jumps to the troop placement page with the defender coordinates (attack defender)
+/**
+ * Where to use: report page
+ * What it does: Jumps to the troop placement page with the defender coordinates (attack defender)
+ */
 (() => {
     const SPIN_END_CHECK_DELAY_MS = 10;
 

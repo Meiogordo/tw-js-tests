@@ -1,3 +1,9 @@
+/**
+ * Where to use: Attack page
+ * What it does: Generates a table with the times that each troop type would take to do the attack, in order to identify the attack's slowest unit
+ * Soon: Automatically suggest identification for the attack based on the remaining duration (might have to select by text value, the selector is not very good otherwise)
+ * Soon2: Add images to times table
+ */
 (() => {
 	//// Helper definitions
 	const troopTimes = [9, 10, 11, 18, 22, 30, 35];
@@ -43,6 +49,21 @@
 		}
 
 		return table;
+	}
+
+	// Returns a HH:MM:SS string with the duration
+	const getCurrentDuration = () => {
+		const attack_details_table = document.querySelector("table.vis");
+		const possible_tds = document.querySelectorAll("td[colspan='2']");
+		let duration_td = null;
+		for (const possible_td of possible_tds) {
+			if (possible_td.textContent === "Regresso em:") {
+				duration_td = possible_td;
+				break;
+			}
+		}
+
+		return duration_td.parentElement.lastChild.textContent;
 	}
 
 	//// Program start
